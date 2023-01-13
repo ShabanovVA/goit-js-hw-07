@@ -25,14 +25,14 @@ const onClickChangeSizeImage = event => {
     <img src=${event.target.dataset.source}>
 `)
     instance.show()
-    
-    galleryList.addEventListener('keydown', (event) => {
-        if (event.code === "Escape") {
-            instance.close()
-        }
-    });
+
+    galleryList.addEventListener('keydown', onCloseModal);
+
+    function onCloseModal(event) {
+    if (event.code === "Escape") {
+    instance.close()
+        galleryList.removeEventListener('keydown', onCloseModal);
+    }
+    };
 }
-
 galleryList.addEventListener('click', onClickChangeSizeImage);
-
-// Как правильно снять слушателя с ESC ?

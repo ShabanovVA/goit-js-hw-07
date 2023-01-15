@@ -10,7 +10,7 @@ const imageItem = galleryItems.map(({ preview, original, description }) => {
     alt='${description}'
     />
     </a>`
-}).join();
+}).join("");
 
 galleryList.insertAdjacentHTML("beforeend", imageItem);
 

@@ -10,7 +10,7 @@ const imageItem = galleryItems.map(({ preview, original, description }) =>
     />
     </a>
     </li>`
-).join();
+).join("");
 
 galleryList.insertAdjacentHTML("beforeend", imageItem);
 new SimpleLightbox('.gallery a', {
